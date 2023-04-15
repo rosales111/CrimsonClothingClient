@@ -1,33 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <style>
-    /* CSS for navbar */
-    nav {
-      background-color: #ee0505;
-      overflow: hidden;
-    }
-    nav a {
-      float: left;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-    nav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-  </style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Website</title>
+	<!-- Include Font Awesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-...">
+	<style>
+		/* CSS for navbar */
+		nav {
+			background-color: #ee0505;
+			overflow: hidden;
+		}
+		nav a {
+			float: left;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		nav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+		/* CSS for second navbar */
+		nav.second-nav {
+			background-color: #333;
+			overflow: hidden;
+		}
+		nav.second-nav a {
+			float: left;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		nav.second-nav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+		/* CSS for three columns */
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 4px;
+		}
+
+		/* Create three equal columns that sits next to each other */
+		.column {
+			flex: 33.33%;
+			padding: 0 4px;
+		}
+
+		/* Responsive images */
+		.img-container {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: auto;
+			margin: 8px 0;
+		}
+
+		.img-container img {
+			display: block;
+			height: auto;
+			max-width: 100%;
+		}
+
+		.img-container .overlay {
+			position: absolute;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.5);
+			color: #f1f1f1;
+			width: 100%;
+			transition: .5s ease;
+			opacity: 0;
+			color: white;
+			font-size: 20px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.img-container:hover .overlay {
+			opacity: 1;
+		}
+	</style>
 </head>
 <body>
-  <nav>
-    <a href="#">CC</a>
-
-  </nav>
-</body>
-</html>
+	<nav>
+		<a href="#">CC</a>
+		<a href="#" class="nav-email"><i class="far fa-envelope"></i></a>
+	</nav>
+	<nav class="second-nav">
+		<a href="#">List an item</a>
+		<a href="#">Edit an item</a>
+		<a href="#">Search</a>
+	</nav>
+	<div class="row">
+		<div class="column">
+			<div class="img-container">
+				<img src="https://via.placeholder.com/150" alt="Placeholder image">
+				<div class="overlay">Image 1</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="img-container">
+				<img src="https://via.placeholder.com/150" alt="Placeholder image">
+				<div class="overlay">Image 2</div
