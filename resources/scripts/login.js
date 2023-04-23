@@ -37,6 +37,7 @@ form.addEventListener('submit', async (event) => {
 
   if (response.ok) {
     // handle successful login
+    window.location.href = '/home-page.html';
   } else {
     // handle login error
   }

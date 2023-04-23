@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+</head>
+<link rel="stylesheet" href="./resources/styles/login.css">
+</head>
+<body>
+  <h1>Crimson Clothing</h1>
+  <button id="login-btn">Login</button>
+  <button id="create-account-btn">Create Account</button>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // handle login button click
+      $('#login-btn').click(function() {
+        window.location.href = '/login.html';
+      });
+
+      // handle create account button click
+      $('#create-account-btn').click(function() {
+        window.location.href = '/create-account.html';
+      });
+    });
+  </script>
+  <script src="./resources/scripts/home-page.js"></script>
+</body>
+</html>
