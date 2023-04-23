@@ -18,11 +18,9 @@ body {
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 0 10px #fff;
-    margin: 0 auto; /* Add this line to center the form horizontally */
+    margin: 20px auto 0; /* Add this line to center the form horizontally and adjust the vertical margin */
     width: 350px;
-    margin-top: 20px; /* Update this line to adjust the vertical margin as needed */
   }
-  
   
   h2 {
     text-align: center;
