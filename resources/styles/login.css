@@ -1,70 +1,99 @@
 body {
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .form-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 0 10px #fff;
-    margin: 20px auto 0; /* Add this line to center the form horizontally and adjust the vertical margin */
-    width: 350px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="email"],
-  input[type="password"],
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #eee;
-    color: #333;
-  }
-  
-  button[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    font-size: 16px;
-    font-weight: bold;
-    width: 100%;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #666;
-    transform: scale(1.1);
-  }
-  
-  .form-container input[type="text"],
-  .form-container input[type="email"],
-  .form-container input[type="password"] {
-    color: #333;
-  }
-  
+  background-color: #222;
+  font-family: Arial, sans-serif;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  margin: 20px auto 0;
+  width: 350px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #eee;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #eee;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  color: #eee;
+  background-color: #444;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+button[type="submit"] {
+  background-color: #eee;
+  color: #222;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #ccc;
+  transform: scale(1.1);
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  color: #eee;
+  background-color: #444;
+}
+
+/* style the add to cart button */
+.add-to-cart-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #666;
+  transform: scale(1.1);
+}

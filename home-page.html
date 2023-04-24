@@ -22,29 +22,46 @@
       padding: 20px;
       text-align: center;
     }
+    
+    /* style the cart button */
+    #cart-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <h1>Crimson Clothing</h1>
   <button id="login-btn">Login</button>
   <button id="create-account-btn">Create Account</button>
+  <button id="cart-btn">Go to Cart</button>
 
   <div class="card-container">
     <div class="card">
       <h2>Card Title</h2>
       <p>Card Content</p>
+      <button class="add-to-cart-btn">Add to Cart</button>
     </div>
   </div>
   <div class="card-container">
     <div class="card">
       <h2>Card Title</h2>
       <p>Card Content</p>
+      <button class="add-to-cart-btn">Add to Cart</button>
     </div>
   </div>
   <div class="card-container">
     <div class="card">
       <h2>Card Title</h2>
       <p>Card Content</p>
+      <button class="add-to-cart-btn">Add to Cart</button>
     </div>
   </div>
 
@@ -59,6 +76,11 @@
       // handle create account button click
       $('#create-account-btn').click(function() {
         window.location.href = '/create-account.html';
+      });
+      
+      // handle cart button click
+      $('#cart-btn').click(function() {
+        window.location.href = '/cart.html';
       });
     });
   </script>
