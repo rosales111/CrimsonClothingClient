@@ -2,13 +2,51 @@
 <html>
 <head>
   <title>Homepage</title>
-</head>
-<link rel="stylesheet" href="./resources/styles/login.css">
+  <link rel="stylesheet" href="./resources/styles/login.css">
+  <style>
+    /* center the card */
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* style the card */
+    .card {
+      width: 300px;
+      height: 200px;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,.3);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <h1>Crimson Clothing</h1>
   <button id="login-btn">Login</button>
   <button id="create-account-btn">Create Account</button>
+
+  <div class="card-container">
+    <div class="card">
+      <h2>Card Title</h2>
+      <p>Card Content</p>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <h2>Card Title</h2>
+      <p>Card Content</p>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <h2>Card Title</h2>
+      <p>Card Content</p>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
