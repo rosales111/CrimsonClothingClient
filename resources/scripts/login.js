@@ -29,12 +29,13 @@ form.addEventListener("submit", async (event) => {
   //   return;
   // }
 
-  let userUrl = `https://localhost:7026/api/Users/${email}`;
+  let userUrl = `https://localhost:7026/api/Users/byemail/${email}`;
   console.log(`https://localhost:7026/api/Users/byemail/${email}`);
   fetch(userUrl)
     .then((response) => response.json())
-    .then((song) => {
-      console.log(response.json());
+    .then((user) => {
+      console.log(user);
     })
     .catch((error) => console.error(error));
+  form.reset();
 });
