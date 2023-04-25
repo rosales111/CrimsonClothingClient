@@ -2,25 +2,58 @@
 <html>
 <head>
   <title>Homepage</title>
-</head>
-<link rel="stylesheet" href="./resources/styles/login.css">
+  <link rel="stylesheet" href="./resources/styles/home-page.css">
+  <link rel="stylesheet" href="./resources/styles/login.css">
 </head>
 <body>
-  <h1>Crimson Clothing</h1>
-  <button id="login-btn">Login</button>
-  <button id="create-account-btn">Create Account</button>
+  <nav>
+    <a href="#">CC</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Go to Cart</a>
+  </nav>
+  
+  
+
+  <div class="card-container">
+    <div class="card">
+      <h2>Card Title</h2>
+      <p>Card Content</p>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <h2>Card Title</h2>
+      <p>Card Content</p>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <h2>Card Title</h2>
+      <p>Card Content</p>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(function() {
       // handle login button click
       $('#login-btn').click(function() {
-        window.location.href = '/login.html';
+        window.location.href = './login.html';
       });
 
       // handle create account button click
       $('#create-account-btn').click(function() {
-        window.location.href = '/create-account.html';
+        window.location.href = './create-account.html';
+      });
+      
+      // handle cart button click
+      $('#cart-btn').click(function() {
+        window.location.href = './cart.html';
       });
     });
   </script>

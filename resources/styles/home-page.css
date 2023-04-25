@@ -1,0 +1,82 @@
+/* add red background color to the navbar */
+nav {
+    background-color: red;
+    padding: 10px;
+  }
+  
+  /* style the links in the navbar */
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .card {
+    width: 300px;
+    height: 200px;
+    background-color: #b4b1b1;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #cart-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .red-navbar {
+    background-color: red;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+  }
+  
+  .red-navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #cart-btn {
+    margin-left: auto;
+  }
+  nav button {
+    background-color: transparent;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav button:focus {
+    outline: none;
+  }
+  
