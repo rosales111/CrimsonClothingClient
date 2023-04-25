@@ -2,46 +2,19 @@
 <html>
 <head>
   <title>Homepage</title>
+  <link rel="stylesheet" href="./resources/styles/home-page.css">
   <link rel="stylesheet" href="./resources/styles/login.css">
-  <style>
-    /* center the card */
-    .card-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-
-    /* style the card */
-    .card {
-      width: 300px;
-      height: 200px;
-      background-color: #fff;
-      box-shadow: 0 0 5px rgba(0,0,0,.3);
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    /* style the cart button */
-    #cart-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
-  <h1>Crimson Clothing</h1>
-  <button id="login-btn">Login</button>
-  <button id="create-account-btn">Create Account</button>
-  <button id="cart-btn">Go to Cart</button>
+  <nav>
+    <a href="#">CC</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Go to Cart</a>
+  </nav>
+  
+  
 
   <div class="card-container">
     <div class="card">
@@ -70,17 +43,17 @@
     $(document).ready(function() {
       // handle login button click
       $('#login-btn').click(function() {
-        window.location.href = '/login.html';
+        window.location.href = './login.html';
       });
 
       // handle create account button click
       $('#create-account-btn').click(function() {
-        window.location.href = '/create-account.html';
+        window.location.href = './create-account.html';
       });
       
       // handle cart button click
       $('#cart-btn').click(function() {
-        window.location.href = '/cart.html';
+        window.location.href = './cart.html';
       });
     });
   </script>

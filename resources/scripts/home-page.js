@@ -16,3 +16,10 @@ if (createAccountButton) {
     window.location.href = '/create-account.html';
   });
 }
+$(document).ready(function() {
+  // handle cart button click
+  $('#cart-btn').click(function() {
+    window.location.href = './cart.html';
+  });
+});
+
