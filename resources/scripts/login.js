@@ -4,38 +4,30 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault(); // prevent the form from submitting normally
 
   const email = document.getElementById("email").value;
-  const passwordInput = document.getElementById("password").value;
+  const passwordInput = document.getElementById("password");
   const password = passwordInput.value;
 
-  // validate email format using regex
-  // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // if (!emailRegex.test(email)) {
-  //   // handle invalid email error
-  //   alert("Please enter a valid email address");
-  //   return;
-  // }
-
-  // if (password.length < 8) {
-  //   alert("Password must be at least 8 characters long.");
-  //   passwordInput.focus();
-  //   return;
-  // }
-
-  // if (!/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])/.test(password)) {
-  //   alert(
-  //     "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character."
-  //   );
-  //   passwordInput.focus();
-  //   return;
-  // }
+  // Your email and password validation code here
 
   let userUrl = `https://localhost:7026/api/Users/byemail/${email}`;
-  console.log(`https://localhost:7026/api/Users/byemail/${email}`);
   fetch(userUrl)
     .then((response) => response.json())
     .then((user) => {
       console.log(user);
+
+      // Authenticate the user
+      if (user && user.password === password) {
+        // Save user information or token in local storage or session storage
+        sessionStorage.setItem("user", JSON.stringify(user));
+
+        // Redirect to the main page
+        window.location.href = "./home-page.html"; // Change "/main" to your main page path
+      } else {
+        // Handle authentication error
+        alert("Invalid email or password");
+      }
     })
     .catch((error) => console.error(error));
+
   form.reset();
 });

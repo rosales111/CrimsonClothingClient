@@ -26,22 +26,22 @@ form.addEventListener("submit", async (event) => {
     role: 1,
   };
 
-  try {
-    const response = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(newUser),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
+  const response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(newUser),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
 
-    if (response.ok) {
-      // handle successful user creation
-      form.reset();
-    } else {
-      // handle user creation error
-    }
-  } catch (error) {
-    console.error(error);
+  if (response.ok) {
+    // Save user information or token in local storage or session storage
+    sessionStorage.setItem("user", JSON.stringify(newUser));
+
+    // Redirect to the main page
+    window.location.href = "./home-page.html"; // Change "/main" to your main page path
+    form.reset();
+  } else {
+    console.log("Error: " + response.statusText);
   }
 });
