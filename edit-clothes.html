@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Clothes</title>
+  <link rel="stylesheet" href="./resources/styles/edit-clothes.css">
+</head>
+<body>
+  <nav>
+    <a href="./employee-homepage.html">CC</a>
+    <a href=""></a>
+    <a href="./edit-clothes.html">Edit Clothes</a>
+    <a href="./list-clothes.html">List Clothes</a>
+  </nav>
+
+  <h1>Edit Clothes</h1>
+
+  <!-- List of clothing items to edit -->
+<div class="clothing-item">
+    <h2>Item Name</h2>
+    <p>Item Description</p>
+    <img src="item-image.jpg" alt="Item Image">
+    <form>
+      <!-- Form fields for editing item -->
+      <label for="item-name">Name:</label>
+      <input type="text" id="item-name" name="item-name" value="Item Name">
+  
+      <label for="item-description">Description:</label>
+      <textarea id="item-description" name="item-description">Item Description</textarea>
+  
+      <label for="item-image">Image:</label>
+      <input type="file" id="item-image" name="item-image">
+  
+      <label for="item-price">Price:</label>
+      <input type="text" id="item-price" name="item-price" value="$10.00">
+  
+      <a href="./edit-clothes.html" class="edit-item-button">Edit Item</a>
+    </form>
+  </div>
+  
+
+    <div class="clothing-item">
+      <!-- Repeat for other clothing items -->
+    </div>
+
+  </div>
+
+  <script src="./resources/scripts/edit-clothes.js"></script>
+</body>
+</html>

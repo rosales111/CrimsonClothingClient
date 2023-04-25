@@ -1,16 +1,22 @@
-/* add red background color to the navbar */
-nav {
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
     background-color: red;
+    color: #fff;
     padding: 10px;
   }
   
-  /* style the links in the navbar */
   nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-size: 20px;
     margin-right: 20px;
   }
+  
   .card-container {
     display: flex;
     justify-content: center;
@@ -26,14 +32,15 @@ nav {
     border-radius: 10px;
     padding: 20px;
     text-align: center;
+    color: #000;
   }
   
   #cart-btn {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -41,7 +48,7 @@ nav {
   }
   
   .red-navbar {
-    background-color: red;
+    background-color: #850202;
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -49,16 +56,18 @@ nav {
     padding: 0 20px;
     color: #fff;
   }
+  
   .card-container {
     display: inline-block;
     margin-right: 10px;
   }
-
+  
   .red-navbar a {
     color: #fff;
     text-decoration: none;
     margin-right: 20px;
   }
+  
   nav {
     display: flex;
     justify-content: space-between;
@@ -68,6 +77,7 @@ nav {
   #cart-btn {
     margin-left: auto;
   }
+  
   nav button {
     background-color: transparent;
     border: none;
