@@ -1,27 +1,59 @@
 const user = JSON.parse(sessionStorage.getItem("user"));
 console.log(user);
 
-// Get references to the login and create account buttons
-const loginButton = document.getElementById("login-btn");
-const createAccountButton = document.getElementById("create-account-btn");
-
-// Add event listeners to the buttons
-if (loginButton) {
-  loginButton.addEventListener("click", () => {
-    // Navigate to the login page
-    window.location.href = "/login.html";
-  });
-}
-
-if (createAccountButton) {
-  createAccountButton.addEventListener("click", () => {
-    // Navigate to the create account page
-    window.location.href = "/create-account.html";
-  });
-}
 $(document).ready(function () {
-  // handle cart button click
   $("#cart-btn").click(function () {
     window.location.href = "./cart.html";
   });
+
+  // Fetch clothing data from API
+  fetchClothingData();
 });
+
+function fetchClothingData() {
+  // Replace with your actual API URL
+  const apiUrl = "https://localhost:7026/api/Clothing";
+
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      displayClothingItems(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching clothing data:", error);
+    });
+}
+
+function displayClothingItems(clothingItems) {
+  const clothingContainer = document.getElementById("clothing-container");
+
+  clothingItems.forEach((item) => {
+    const cardContainer = document.createElement("div");
+    cardContainer.className = "card-container";
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const img = document.createElement("img");
+    img.src = item.imageUrl;
+    img.alt = item.title;
+
+    const h2 = document.createElement("h2");
+    h2.textContent = item.title;
+
+    const p = document.createElement("p");
+    p.textContent = item.type;
+
+    const button = document.createElement("button");
+    button.className = "add-to-cart-btn";
+    button.textContent = "Add to Cart";
+
+    card.appendChild(img);
+    card.appendChild(h2);
+    card.appendChild(p);
+    card.appendChild(button);
+
+    cardContainer.appendChild(card);
+    clothingContainer.appendChild(cardContainer);
+  });
+}
