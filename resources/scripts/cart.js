@@ -3,7 +3,7 @@ $(document).ready(function() {
     const itemCards = $('.card.item');
   
     // Initialize the total price to 0
-    let totalPrice = 0;
+    let totalPrice = 90;
   
     // Loop through each item card and add event listener to the remove button
     itemCards.each(function() {
