@@ -1,70 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Cart</title>
-  <link rel="stylesheet" href="./resources/styles/cart.css">
-</head>
-<body>
-  <nav>
-    <a href="./home-page.html">CC</a>
-    <a href="/shop"></a>
-    <a href="/about"></a>
-    <a href="./sell-clothes.html">Sell Clothes</a>
-    <a href="./cart.html">Go to Cart</a>
-  </nav>
+  <head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="./resources/styles/cart.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="./home-page.html">CC</a>
+      <a href="/shop"></a>
+      <a href="/about"></a>
+      <a href="./sell-clothes.html">Sell Clothes</a>
+      <a href="./cart.html">Go to Cart</a>
+    </nav>
 
-  <div class="card">
-    <h1>My Cart</h1>
-    <form>
-    <ul class="item-list">
-      <li class="item">
-        <img src="./resources/images/item1.jpg" alt="Item 1">
-        <div class="item-details">
-          <h2>Item Title</h2>
-          <p>Type: Item Type</p>
-          <p>Occasion: Occasion</p>
-          <p>Size: Item Size</p>
-        </div>
-        <div class="item-price">
-          <p>$20.00</p>
-        </div>
-      </li>
+    <div class="card">
+      <h1>My Cart</h1>
+      <form>
+        <ul class="item-list">
+          <!-- Items will be added dynamically here -->
+        </ul>
 
-      <li class="item">
-        <img src="./resources/images/item2.jpg" alt="Item 2">
-        <div class="item-details">
-          <h2>Item Title</h2>
-          <p>Type: Item Type</p>
-          <p>Occasion: Occasion</p>
-          <p>Size: Item Size</p>
+        <div class="total-price">
+          <h2>Total Price:</h2>
+          <p>$0.00</p>
         </div>
-        <div class="item-price">
-          <p>$30.00</p>
-        </div>
-      </li>
-
-      <li class="item">
-        <img src="./resources/images/item3.jpg" alt="Item 3">
-        <div class="item-details">
-          <h2>Item Title</h2>
-          <p>Type: Item Type</p>
-          <p>Occasion: Occasion</p>
-          <p>Size: Item Size</p>
-        </div>
-        <div class="item-price">
-          <p>$40.00</p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="total-price">
-      <h2>Total Price:</h2>
-      <p>$90.00</p>
+        <button type="submit">Submit</button>
+      </form>
     </div>
-  </div>
-  <button type="submit">Submit</button>
-</form>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./resources/scripts/cart.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./resources/scripts/cart.js"></script>
+  </body>
 </html>

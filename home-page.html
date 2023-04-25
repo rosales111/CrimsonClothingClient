@@ -1,52 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Homepage</title>
-  <link rel="stylesheet" href="./resources/styles/home-page.css">
-  <link rel="stylesheet" href="./resources/styles/login.css">
-  <style>
-    .container {
-      display: flex;
-      justify-content: center;
-      margin-top: 50px;
-    }
-  </style>
-</head>
+  <head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./resources/styles/home-page.css" />
+    <link rel="stylesheet" href="./resources/styles/login.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="./home-page.html">CC</a>
+      <a href="./shop"></a>
+      <a href="/about"></a>
+      <a href="./sell-clothes.html">Sell Clothes</a>
+      <a href="./cart.html">Go to Cart</a>
+    </nav>
 
-<body>
-  <nav>
-    <a href="./home-page.html">CC</a>
-    <a href="/shop"></a>
-    <a href="/about"></a>
-    <a href="./sell-clothes.html">Sell Clothes</a>
-    <a href="./cart.html">Go to Cart</a>
-  </nav>
-  
-  
+    <div id="clothing-container"></div>
 
-  <div class="card-container">
-    <div class="card">
-      <h2>Card Title</h2>
-      <p>Card Content</p>
-      <button class="add-to-cart-btn">Add to Cart</button>
-    </div>
-  </div>
-  <div class="card-container">
-    <div class="card">
-      <h2>Card Title</h2>
-      <p>Card Content</p>
-      <button class="add-to-cart-btn">Add to Cart</button>
-    </div>
-  </div>
-  <div class="card-container">
-    <div class="card">
-      <h2>Card Title</h2>
-      <p>Card Content</p>
-      <button class="add-to-cart-btn">Add to Cart</button>
-    </div>
-  </div>
-
-  
-  <script src="./resources/scripts/home-page.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./resources/scripts/home-page.js"></script>
+  </body>
 </html>
