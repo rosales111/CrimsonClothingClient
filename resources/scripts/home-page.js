@@ -1,25 +1,27 @@
+const user = JSON.parse(sessionStorage.getItem("user"));
+console.log(user);
+
 // Get references to the login and create account buttons
-const loginButton = document.getElementById('login-btn');
-const createAccountButton = document.getElementById('create-account-btn');
+const loginButton = document.getElementById("login-btn");
+const createAccountButton = document.getElementById("create-account-btn");
 
 // Add event listeners to the buttons
 if (loginButton) {
-  loginButton.addEventListener('click', () => {
+  loginButton.addEventListener("click", () => {
     // Navigate to the login page
-    window.location.href = '/login.html';
+    window.location.href = "/login.html";
   });
 }
 
 if (createAccountButton) {
-  createAccountButton.addEventListener('click', () => {
+  createAccountButton.addEventListener("click", () => {
     // Navigate to the create account page
-    window.location.href = '/create-account.html';
+    window.location.href = "/create-account.html";
   });
 }
-$(document).ready(function() {
+$(document).ready(function () {
   // handle cart button click
-  $('#cart-btn').click(function() {
-    window.location.href = './cart.html';
+  $("#cart-btn").click(function () {
+    window.location.href = "./cart.html";
   });
 });
-
