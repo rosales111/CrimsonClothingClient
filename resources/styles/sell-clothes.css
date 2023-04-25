@@ -1,0 +1,57 @@
+body {
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  
+  nav button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav button:focus {
+    outline: none;
+  }
+  body {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* increase the font size and line height for better readability */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* use a light-colored font for better contrast */
+  h1, h2, h3, h4, h5, h6, p, a {
+    color: #eee;
+  }
+  
+  /* use bold text for headings to increase contrast */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+  
