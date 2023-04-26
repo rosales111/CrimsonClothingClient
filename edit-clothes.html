@@ -4,12 +4,29 @@
   <title>Edit Clothes</title>
   <link rel="stylesheet" href="./resources/styles/edit-clothes.css">
 </head>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .underline-on-hover:hover {
+    text-decoration: underline;
+  }
+</style>
+
 <body>
-  <nav>
-    <a href="./employee-homepage.html">CC</a>
-    <a href=""></a>
-    <a href="./edit-clothes.html">Edit Clothes</a>
-    <a href="./list-clothes.html">List Clothes</a>
+  <nav style="display: flex; align-items: center;">
+    <a href="./employee-homepage.html">𝓒𝓒</a>
+    
+    <span style="font-size: 24px; font-weight: bold; padding: 0 20px; margin-left: 225px;">𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span>
+    <div style="display: flex; align-items: center;">
+      <a href="./edit-clothes.html" class="underline-on-hover" style="font-size: 18px; color: white; padding-right: 20px;">Edit Clothes</a>
+      <a href="./list-clothes.html" class="underline-on-hover" style="font-size: 20px; color: white; padding-right: 5px;">List Clothes</a>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   </nav>
 
   <h1>Edit Clothes</h1>

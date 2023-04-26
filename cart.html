@@ -4,13 +4,29 @@
     <title>Cart</title>
     <link rel="stylesheet" href="./resources/styles/cart.css" />
   </head>
+
+  <style>
+
+    .underline-on-hover:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+
   <body>
-    <nav>
-      <a href="./home-page.html">CC</a>
+    <nav style="display: flex; align-items: center;">
+      <a href="./home-page.html">𝓒𝓒</a>
+      
+      <span style="font-size: 24px; font-weight: bold; padding: 0 20px; margin-left: 425px;">𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span>
       <a href="/shop"></a>
       <a href="/about"></a>
-      <a href="./sell-clothes.html">Sell Clothes</a>
-      <a href="./cart.html">Go to Cart</a>
+      <div style="display: flex; align-items: center;">
+        <a href="./sell-clothes.html" class="underline-on-hover" style="font-size: 18px; color: white; padding-right: 20px;">Sell Clothes</a>
+        <a href="./cart.html" class="underline-on-hover" style="font-size: 20px;">
+          <ion-icon name="cart-outline"></ion-icon>
+        </a>
+      </div>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     </nav>
 
     <h1>My Cart</h1>
