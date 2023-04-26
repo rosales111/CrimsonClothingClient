@@ -20,8 +20,9 @@ nav {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       width: 50%;
+      margin-left: 20px;
     }
 
  

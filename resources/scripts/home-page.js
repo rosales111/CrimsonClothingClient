@@ -10,6 +10,18 @@ $(document).ready(function () {
   fetchClothingData();
 });
 
+function addToCart(clothing) {
+  let cartItems = JSON.parse(localStorage.getItem("cart"));
+
+  if (!cartItems) {
+    cartItems = [];
+  }
+
+  cartItems.push(clothing);
+  localStorage.setItem("cart", JSON.stringify(cartItems));
+  console.log(cartItems);
+}
+
 function fetchClothingData() {
   // Replace with your actual API URL
   const apiUrl = "https://localhost:7026/api/Clothing";
@@ -52,6 +64,10 @@ function displayClothingItems(clothingItems) {
     const button = document.createElement("button");
     button.className = "add-to-cart-btn";
     button.textContent = "Add to Cart";
+    button.addEventListener("click", () => {
+      addToCart(item);
+      console.log(item);
+    });
 
     infoWrapper.appendChild(h2);
     infoWrapper.appendChild(p);
