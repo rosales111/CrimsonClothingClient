@@ -22,7 +22,8 @@ form.addEventListener("submit", async (event) => {
 
         // Redirect to the main page
         window.location.href = "./home-page.html"; // Change "/main" to your main page path
-      } else {
+      } 
+      else {
         // Handle authentication error
         alert("Invalid email or password");
       }

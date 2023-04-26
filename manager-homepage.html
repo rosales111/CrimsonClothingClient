@@ -10,32 +10,35 @@
       justify-content: center;
       margin-top: 50px;
     }
+
+    .cover-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: cursive;
+      font-size: 72px;
+      color: red;
+    }
+
+    .underline-on-hover:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="./employee-homepage.html">CC</a>
-    <a href="/shop"></a>
-    <a href="./promote-demote.html">Promote & Demote</a>
-    <a href="./manager-reports.html">Reports</a>
+  <nav style="display: flex; align-items: center;">
+    <a href="./manager-homepage.html">𝓒𝓒</a>
+    
+    <span style="font-size: 24px; font-weight: bold; padding: 0 20px; margin-left: 225px;">𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span>
+    <div style="display: flex; align-items: center;">
+      <a href="./promote-demote.html" class="underline-on-hover" style="font-size: 18px; color: white; padding-right: 20px;">Promote & Demote</a>
+      <a href="./reports.html" class="underline-on-hover" style="font-size: 20px; color: white; padding-right: 5px;">Reports</a>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   </nav>
   
-  <div class="container">
-    <div class="card-container">
-      <div class="card">
-        <h2>Card Title</h2>
-        <p>Card Content</p>
-        <button class="add-to-cart-btn">Edit Item</button>
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="card">
-        <h2>Card Title</h2>
-        <p>Card Content</p>
-        <button class="add-to-cart-btn">Edit Item</button>
-      </div>
-    </div>
-  </div>
+  <div class="cover-text">𝓒𝓻𝓲𝓶𝓼𝓸𝓷 𝓒𝓵𝓸𝓽𝓱𝓲𝓷𝓰</div>
   
   <script src="./resources/scripts/manager-homepage.js"></script>
 </body>
