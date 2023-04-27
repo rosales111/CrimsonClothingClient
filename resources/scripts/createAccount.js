@@ -19,6 +19,12 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
+  const emailExists = await checkIfEmailExists(email);
+  if (emailExists) {
+    alert("Email already registered");
+    return;
+  }
+
   let newUser = {
     fullname: fullname,
     email: email,
@@ -39,9 +45,30 @@ form.addEventListener("submit", async (event) => {
     sessionStorage.setItem("user", JSON.stringify(newUser));
 
     // Redirect to the main page
-    window.location.href = "./home-page.html"; // Change "/main" to your main page path
+    //window.location.href = "./home-page.html"; // Change "/main" to your main page path
     form.reset();
   } else {
     console.log("Error: " + response.statusText);
   }
 });
+
+async function checkIfEmailExists(email) {
+  try {
+    console.log(email);
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+
+    // Check if the provided email exists in the data
+    console.log(data.some((data) => data.email === email));
+    return data.some((data) => data.email === email);
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    return false;
+  }
+}
