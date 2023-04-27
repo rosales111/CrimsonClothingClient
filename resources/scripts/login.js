@@ -16,7 +16,7 @@ form.addEventListener("submit", async (event) => {
       console.log(user);
 
       // Authenticate the user
-      if (user && user.password === password) {
+      if (user && user.password === password && !user.isBanned) {
         // Save user information or token in local storage or session storage
         sessionStorage.setItem("user", JSON.stringify(user));
 
@@ -28,6 +28,8 @@ form.addEventListener("submit", async (event) => {
         } else {
           window.location.href = "./home-page.html";
         }
+      } else if (user && user.password === password && user.isBanned) {
+        alert("User is banned");
       } else {
         // Handle authentication error
         alert("Invalid email or password");
