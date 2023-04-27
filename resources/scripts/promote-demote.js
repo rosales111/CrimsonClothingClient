@@ -1,4 +1,7 @@
-url = "https://localhost:7026/api/Users";
+const url = "https://localhost:7026/api/Users";
+const promotionURL = "https://localhost:7026/api/promotion";
+const promoter = JSON.parse(sessionStorage.getItem("user"));
+console.log(promoter);
 const users = fetchUserData();
 async function fetchUserData() {
   try {
@@ -55,8 +58,12 @@ function createUserTable(users) {
       <td>${user.email}</td>
       <td>${role}</td>
       <td>
-        <button class="btn btn-primary btn-sm me-2" onclick="promoteUser(${user.id})">Promote</button>
-        <button class="btn btn-warning btn-sm" onclick="demoteUser(${user.id})">Demote</button>
+        <button class="btn btn-primary btn-sm me-2" onclick="promoteUser(${
+          user.id
+        })">Promote</button>
+        <button class="btn btn-warning btn-sm" onclick="demoteUser(${
+          (user.id, promoter.id)
+        })">Demote</button>
       </td>
     `;
     tbody.appendChild(tr);
@@ -67,14 +74,21 @@ function createUserTable(users) {
 }
 
 // Functions to handle promotion and demotion actions
-async function promoteUser(userId) {
+async function promoteUser(promoteeId) {
+  console.log(promoteeId);
   const data = await fetchUserData();
-  const user = data.find((u) => u.id === userId);
+  const user = data.find((u) => u.id === promoteeId);
   if (user.role == 3) {
     alert("User is already an admin");
     return;
   }
   user.role = user.role + 1;
+  const report = {
+    promoterID: promoter.id,
+    promoteeID: promoteeId,
+    newRole: user.role,
+  };
+  await handlePost(report);
   await handlePut(user);
   const table = createUserTable(data);
   document.body.replaceChild(table, document.querySelector("table"));
@@ -115,6 +129,22 @@ async function handlePut(user) {
   await fetch(userUrl, {
     method: "PUT",
     body: JSON.stringify(newUser),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+}
+
+async function handlePost(promotion) {
+  console.log("handlePost called");
+  const newPromotion = {
+    promoterID: promotion.promoterID,
+    promoteeID: promotion.promoteeID,
+    newRole: promotion.newRole,
+  };
+  await fetch(promotionURL, {
+    method: "POST",
+    body: JSON.stringify(promotion),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },

@@ -96,17 +96,21 @@ $(document).ready(function () {
 });
 
 function handleCheckOut() {
-  const transactionUrl = "https://localhost:7026/api/transactions";
+  const transactionUrl = "https://localhost:7026/api/Transactions";
   const clothingItems = JSON.parse(localStorage.getItem("cart"));
   console.log(user.id);
   const totalPrice = $(".total-price h2").text();
-  const date = new Date();
-  console.log(date);
+  const numericPrice = parseFloat(totalPrice.replace(/[^\d.-]/g, ""));
+  console.log(numericPrice);
+
+  console.log(totalPrice);
+
   const transaction = {
-    Date: date,
-    Price: totalPrice,
-    UserID: user.id,
+    price: numericPrice,
+    userID: user.id,
   };
+
+
 
   fetch(transactionUrl, {
     method: "POST",
@@ -114,7 +118,20 @@ function handleCheckOut() {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  });
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log("Transaction created");
+      } else if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      updateClothing(clothingItems);
+      localStorage.removeItem("cart");
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("There was an error:", error);
+    });
 
   updateClothing(clothingItems);
   localStorage.removeItem("cart");
