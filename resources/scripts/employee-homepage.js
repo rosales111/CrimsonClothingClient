@@ -10,7 +10,37 @@ $(document).ready(function () {
   fetchClothingData();
 });
 
-function approve(clothing) {}
+function approve(clothing) {
+  clothing.isApproved = true;
+  handlePut(clothing);
+}
+
+async function handlePut(clothing) {
+  console.log("handlePut called");
+  const clothingUrl = "https://localhost:7026/api/Clothing" + "/" + clothing.ID;
+
+  const newClothing = {
+    id: clothing.id,
+    buyPrice: clothing.buyPrice,
+    sellPrice: clothing.sellPrice,
+    title: clothing.title,
+    type: clothing.type,
+    occasion: clothing.occasion,
+    size: clothing.size,
+    imageURL: clothing.imageURL,
+    isApproved: clothing.isApproved,
+    isDeleted: clothing.isDeleted,
+    userId: clothing.userId,
+  };
+
+  await fetch(clothingUrl, {
+    method: "PUT",
+    body: JSON.stringify(newClothing),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+}
 
 async function fetchEmailByID(id) {
   const userUrl = `https://localhost:7026/api/Users/${id}`;
