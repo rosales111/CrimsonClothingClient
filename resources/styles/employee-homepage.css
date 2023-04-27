@@ -1,84 +1,117 @@
 /* add red background color to the navbar */
 nav {
-    background-color: red;
-    padding: 10px;
-  }
-  
-  /* style the links in the navbar */
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    margin-right: 20px;
-  }
- .card-container {
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
-   max-width: 1000px;
-   margin: 0 auto;
- }
-  
-  .card {
-    width: 300px;
-    height: 200px;
-    background-color: #333;
-    box-shadow: 0 0 5px rgba(0,0,0,.3);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  #cart-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .red-navbar {
-    background-color: red;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    color: #fff;
-  }
- 
+  background-color: red;
+  padding: 10px;
+  margin-bottom: 270px;
+}
 
-  .red-navbar a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 20px;
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #cart-btn {
-    margin-left: auto;
-  }
-  nav button {
-    background-color: transparent;
-    border: none;
-    color: blue;
-    cursor: pointer;
-    text-decoration: underline;
-    font-size: inherit;
-    font-family: inherit;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav button:focus {
-    outline: none;
-  }
-  
+/* style the links in the navbar */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.card-container {
+display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  width: 270px;
+  background-color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+.add-to-cart-btn {
+  background-color: #4CAF50;
+
+}
+
+.red-navbar {
+  background-color: red;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.red-navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cart-btn {
+  margin-left: auto;
+}
+
+nav button {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+nav button:focus {
+  outline: none;
+}
+
+.img-container {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  min-height: 150px;
+
+}
+
+.info-container {
+  height: 100%;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.card {
+  height: 270px;
+  width: 300px;
+}
+
+
+
+p {
+  text-align: right;
+}
