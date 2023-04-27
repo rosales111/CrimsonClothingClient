@@ -1,45 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Manager Homepage</title>
-  <link rel="stylesheet" href="./resources/styles/home-page.css">
-  <link rel="stylesheet" href="./resources/styles/manager-homepage.css">
-  <style>
-    .container {
-      display: flex;
-      justify-content: center;
-      margin-top: 50px;
-    }
+  <head>
+    <title>Manager Homepage</title>
+    <link rel="stylesheet" href="./resources/styles/home-page.css" />
+    <link rel="stylesheet" href="./resources/styles/manager-homepage.css" />
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
 
-    .cover-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: cursive;
-      font-size: 72px;
-      color: red;
-    }
+      .cover-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: cursive;
+        font-size: 72px;
+        color: red;
+      }
 
-    .underline-on-hover:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <nav style="display: flex; align-items: center;">
-    <a href="./manager-homepage.html">𝓒𝓒</a>
-    
-    <span style="font-size: 24px; font-weight: bold; padding: 0 20px; margin-left: 225px;">𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span>
-    <div style="display: flex; align-items: center;">
-      <a href="./promote-demote.html" class="underline-on-hover" style="font-size: 18px; color: white; padding-right: 20px;">Promote & Demote</a>
-      <a href="./reports.html" class="underline-on-hover" style="font-size: 20px; color: white; padding-right: 5px;">Reports</a>
-    </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  </nav>
-  
-  <div class="cover-text">𝓒𝓻𝓲𝓶𝓼𝓸𝓷 𝓒𝓵𝓸𝓽𝓱𝓲𝓷𝓰</div>
-  
-  <script src="./resources/scripts/manager-homepage.js"></script>
-</body>
+      .underline-on-hover:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav style="display: flex; align-items: center">
+      <a href="./manager-homepage.html">𝓒𝓒</a>
+
+      <span
+        style="
+          font-size: 24px;
+          font-weight: bold;
+          padding: 0 20px;
+          margin-left: 225px;
+        "
+        >𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span
+      >
+      <div style="display: flex; align-items: center">
+        <a
+          href="./promote-demote.html"
+          class="underline-on-hover"
+          style="font-size: 18px; color: white; padding-right: 20px"
+          >Promote & Demote</a
+        >
+        <a
+          href="./reports.html"
+          class="underline-on-hover"
+          style="font-size: 20px; color: white; padding-right: 5px"
+          >Reports</a
+        >
+        <a
+          href="./ban.html"
+          class="underline-on-hover"
+          style="font-size: 20px; color: white; padding-right: 5px"
+          >Ban User</a
+        >
+      </div>
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></script>
+    </nav>
+
+    <div class="cover-text">𝓒𝓻𝓲𝓶𝓼𝓸𝓷 𝓒𝓵𝓸𝓽𝓱𝓲𝓷𝓰</div>
+
+    <script src="./resources/scripts/manager-homepage.js"></script>
+  </body>
 </html>

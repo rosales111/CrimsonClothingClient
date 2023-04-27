@@ -8,6 +8,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    margin-bottom: 25px;
   }
   
   nav a {
@@ -20,4 +21,21 @@ body {
     text-align: center;
     margin-top: 50px;
   }
+
+    table td {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+        table th {
+          font-size: 16px;
+          font-weight: bold;
+          color: white;
+          text-align: center;
+          padding: 10px;
+        }
+
+
   
