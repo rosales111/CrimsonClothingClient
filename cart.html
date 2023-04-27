@@ -4,37 +4,21 @@
     <title>Cart</title>
     <link rel="stylesheet" href="./resources/styles/cart.css" />
   </head>
-
-  <style>
-
-    .underline-on-hover:hover {
-      text-decoration: underline;
-    }
-
-  </style>
-
   <body>
-    <nav style="display: flex; align-items: center;">
-      <a href="./home-page.html">𝓒𝓒</a>
-      
-      <span style="font-size: 24px; font-weight: bold; padding: 0 20px; margin-left: 425px;">𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span>
+    <nav>
+      <a href="./home-page.html">CC</a>
       <a href="/shop"></a>
       <a href="/about"></a>
-      <div style="display: flex; align-items: center;">
-        <a href="./sell-clothes.html" class="underline-on-hover" style="font-size: 18px; color: white; padding-right: 20px;">Sell Clothes</a>
-        <a href="./cart.html" class="underline-on-hover" style="font-size: 20px;">
-          <ion-icon name="cart-outline"></ion-icon>
-        </a>
-      </div>
-      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <a href="./sell-clothes.html">Sell Clothes</a>
+      <a href="./cart.html">Go to Cart</a>
     </nav>
 
     <h1>My Cart</h1>
     <div id="clothing-container"></div>
 
     <div class="total-price">
-      <h2>$0.00</h2>
-      <button type="submit">Check Out</button>
+      <h2 id="total-price">$0.00</h2>
+      <button type="submit" onclick="handleCheckOut()">Check Out</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

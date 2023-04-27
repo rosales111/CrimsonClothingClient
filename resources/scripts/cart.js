@@ -1,3 +1,5 @@
+const user = JSON.parse(sessionStorage.getItem("user"));
+console.log(user);
 $(document).ready(function () {
   // Retrieve clothing items from local storage
   const clothingItems = JSON.parse(localStorage.getItem("cart")) || [];
@@ -48,7 +50,6 @@ $(document).ready(function () {
     // Create price element
     const priceP = document.createElement("p");
     priceP.textContent = "$" + item.sellPrice;
-    
 
     // Append all elements to info wrapper
     infoWrapper.appendChild(h2);
@@ -84,15 +85,81 @@ $(document).ready(function () {
 
       // Update the total price in the cart
       totalPrice -= item.sellPrice;
-      $(".total-price p").text("$" + totalPrice.toFixed(2));
+      $(".total-price h2").text("$" + totalPrice.toFixed(2));
     });
 
-    // Append remove button to info wrapper
-    infoWrapper.appendChild(removeBtn);
+    totalPrice += item.sellPrice;
+    $(".total-price h2").text("$" + totalPrice.toFixed(2));
 
-    // (remaining code remains the same)
+    infoWrapper.appendChild(removeBtn);
+  });
+});
+
+function handleCheckOut() {
+  const transactionUrl = "https://localhost:7026/api/transactions";
+  const clothingItems = JSON.parse(localStorage.getItem("cart"));
+  console.log(user.id);
+  const totalPrice = $(".total-price h2").text();
+  const date = new Date();
+  console.log(date);
+  const transaction = {
+    Date: date,
+    Price: totalPrice,
+    UserID: user.id,
+  };
+
+  fetch(transactionUrl, {
+    method: "POST",
+    body: JSON.stringify(transaction),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
   });
 
-  // Update the total price in the cart
-  $(".total-price p").text("$" + totalPrice.toFixed(2));
-});
+  updateClothing(clothingItems);
+  localStorage.removeItem("cart");
+}
+
+function updateClothing(clothingItems) {
+  const transactions = FetchTransactions();
+  const lastTransaction = transactions[transactions.length - 1];
+  clothingItems.forEach((item) => {
+    const clothingUrl = `https://localhost:7026/api/Clothing/${item.id}`;
+    const clothing = {
+      id: item.id,
+      name: item.title,
+      size: item.size,
+      imageURL: item.imageURL,
+      userID: item.userID,
+      transactionID: lastTransaction.id,
+    };
+
+    fetch(clothingUrl, {
+      method: "PUT",
+      body: JSON.stringify(clothing),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+  });
+}
+
+function FetchTransactions() {
+  const transactionUrl = "https://localhost:7026/api/transactions";
+  const transactionItems = [];
+  fetch(transactionUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      data.forEach((item) => {
+        const transaction = {
+          id: item.id,
+          date: item.date,
+          price: item.price,
+          userID: item.userID,
+        };
+        transactionItems.push(transaction);
+      });
+    });
+  return transactionItems;
+}
