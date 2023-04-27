@@ -3,6 +3,8 @@ body {
   font-family: Arial, sans-serif;
   color: #eee;
   padding-bottom: 175px;
+  padding: 0px;
+  margin: 0px;
 }
 .card {
   background-color: #333;
