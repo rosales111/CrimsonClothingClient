@@ -11,58 +11,42 @@ $(document).ready(function () {
 });
 
 function edit(clothing) {
-  let newBuyPrice = prompt("Enter the price the store bought it at: ");
-  let newSellPrice = prompt("Enter the price the store will sell it at: ");
-  let newTitle = prompt("Enter new title: ");
-  let newType = prompt("Enter new type: ");
-  let newOccasion = prompt("Enter new occasion: ");
-  let newSize = prompt("Enter new size: ");
-  let imageURL = prompt("Enter new image URL: ");
+  clothing.buyPrice = prompt("Enter the price the store bought it at: ");
+  clothing.sellPrice = prompt("Enter the price the store will sell it at: ");
+  clothing.title = prompt("Enter new title: ");
+  clothing.type = prompt("Enter new type: ");
+  clothing.occasion = prompt("Enter new occasion: ");
+  clothing.size = prompt("Enter new size: ");
+  clothing.imageURL = prompt("Enter new image URL: ");
+  handlePut(clothing);
+  fetchClothingData();
+}
 
-  let newClothing = {
+async function handlePut(clothing) {
+  console.log("handlePut called");
+  const clothingUrl = "https://localhost:7026/api/Clothing" + "/" + clothing.ID;
+
+  const newClothing = {
     id: clothing.id,
-    buyPrice: newBuyPrice,
-    sellPrice: newSellPrice,
-    title: newTitle,
-    type: newType,
-    occasion: newOccasion,
-    size: newSize,
-    imageURL: imageURL,
+    buyPrice: clothing.buyPrice,
+    sellPrice: clothing.sellPrice,
+    title: clothing.title,
+    type: clothing.type,
+    occasion: clothing.occasion,
+    size: clothing.size,
+    imageURL: clothing.imageURL,
     isApproved: clothing.isApproved,
     isDeleted: clothing.isDeleted,
     userId: clothing.userId,
   };
-}
 
-async function handlePut(clothing) {
-  const clothingUrl = url + "/" + clothing.ID;
-
-  const updatedSong = {
-    ID: putSong.ID,
-    Title: putSong.Title,
-    Artist: putSong.Artist,
-    Date: putSong.Date,
-    Favorited: putSong.Favorited,
-    Deleted: putSong.Deleted,
-  };
-
-  await fetch(songUrl, {
+  await fetch(clothingUrl, {
     method: "PUT",
-    body: JSON.stringify(updatedSong),
+    body: JSON.stringify(newClothing),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-
-  handleOnLoad();
-}
-
-async function fetchEmailByID(id) {
-  const userUrl = `https://localhost:7026/api/Users/${id}`;
-
-  return fetch(userUrl)
-    .then((response) => response.json())
-    .then((user) => user.email);
 }
 
 function fetchClothingData() {
