@@ -2,6 +2,7 @@
 nav {
     background-color: red;
     padding: 10px;
+    margin-bottom: 270px;
   }
   
   /* style the links in the navbar */
@@ -11,19 +12,12 @@ nav {
     font-size: 20px;
     margin-right: 20px;
   }
+  
   .card-container {
     display: inline-block;
-    margin: 10px;
+    justify-content: space-between;
+    margin: 30px;
   }
-
-    .info-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
-      margin-left: 20px;
-    }
 
  
   
@@ -63,11 +57,7 @@ nav {
     padding: 0 20px;
     color: #fff;
   }
-  .card-container {
-    display: inline-block;
-    margin-right: 10px;
-  }
-
+  
   .red-navbar a {
     color: #fff;
     text-decoration: none;
@@ -98,9 +88,20 @@ nav {
     outline: none;
   }
 
- .clth-img {
-   width: 50%;
-   object-fit: cover;
- }
+    .img-container {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+        .info-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+        }
+
   
   

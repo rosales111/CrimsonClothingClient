@@ -11,12 +11,13 @@ nav {
     font-size: 20px;
     margin-right: 20px;
   }
-  .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
+ .card-container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   max-width: 1000px;
+   margin: 0 auto;
+ }
   
   .card {
     width: 300px;
@@ -49,10 +50,7 @@ nav {
     padding: 0 20px;
     color: #fff;
   }
-  .card-container {
-    display: inline-block;
-    margin-right: 10px;
-  }
+ 
 
   .red-navbar a {
     color: #fff;
