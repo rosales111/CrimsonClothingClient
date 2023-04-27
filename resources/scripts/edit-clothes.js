@@ -34,6 +34,29 @@ function edit(clothing) {
   };
 }
 
+async function handlePut(clothing) {
+  const clothingUrl = url + "/" + clothing.ID;
+
+  const updatedSong = {
+    ID: putSong.ID,
+    Title: putSong.Title,
+    Artist: putSong.Artist,
+    Date: putSong.Date,
+    Favorited: putSong.Favorited,
+    Deleted: putSong.Deleted,
+  };
+
+  await fetch(songUrl, {
+    method: "PUT",
+    body: JSON.stringify(updatedSong),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+
+  handleOnLoad();
+}
+
 async function fetchEmailByID(id) {
   const userUrl = `https://localhost:7026/api/Users/${id}`;
 
