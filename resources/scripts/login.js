@@ -20,10 +20,15 @@ form.addEventListener("submit", async (event) => {
         // Save user information or token in local storage or session storage
         sessionStorage.setItem("user", JSON.stringify(user));
 
-        // Redirect to the main page
-        window.location.href = "./home-page.html"; // Change "/main" to your main page path
-      } 
-      else {
+        // Redirect to the appropriate page based on user role
+        if (email === "manager@crimsonclothing.com") {
+          window.location.href = "./manager-homepage.html";
+        } else if (email.endsWith("@crimsonclothing.com")) {
+          window.location.href = "./employee-homepage.html";
+        } else {
+          window.location.href = "./home-page.html";
+        }
+      } else {
         // Handle authentication error
         alert("Invalid email or password");
       }

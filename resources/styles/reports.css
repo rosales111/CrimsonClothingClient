@@ -1,6 +1,6 @@
 body {
 	font-family: Arial, sans-serif;
-	background-color: #f2f2f2;
+	background-color: #222;
 	margin: 0;
   	padding: 0;
 }
@@ -35,11 +35,11 @@ body {
 .report table th, .report table td {
 	padding: 10px;
 	text-align: left;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #525050;
 }
 
 .report table th {
-	background-color: #f2f2f2;
+	background-color: #636161;
 }
 
 canvas {
