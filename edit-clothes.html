@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Edit Clothes</title>
-  <link rel="stylesheet" href="./resources/styles/edit-clothes.css">
-</head>
+  <head>
+    <title>Employee Homepage</title>
+    <link rel="stylesheet" href="./resources/styles/home-page.css" />
+    <link rel="stylesheet" href="./resources/styles/login.css" />
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
 
-<style>
-  .container {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
+      .underline-on-hover:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <head>
+      <title>Employee Homepage</title>
+      <link rel="stylesheet" href="./resources/styles/home-page.css" />
+      <link rel="stylesheet" href="./resources/styles/login.css" />
+      <style>
+        .container {
+          display: flex;
+          justify-content: center;
+          margin-top: 50px;
+        }
 
-  .underline-on-hover:hover {
-    text-decoration: underline;
-  }
-</style>
+        .underline-on-hover:hover {
+          text-decoration: underline;
+        }
+      </style>
+    </head>
+    <body>
+      <nav style="display: flex; align-items: center">
+        <a href="./employee-homepage.html">𝓒𝓒</a>
 
-<body>
-  <nav style="display: flex; align-items: center;">
-    <a href="./employee-homepage.html">𝓒𝓒</a>
-    
-    <span style="font-size: 24px; font-weight: bold; padding: 0 20px; margin-left: 225px;">𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span>
-    <div style="display: flex; align-items: center;">
-      <a href="./edit-clothes.html" class="underline-on-hover" style="font-size: 18px; color: white; padding-right: 20px;">Edit Clothes</a>
-      <a href="./list-clothes.html" class="underline-on-hover" style="font-size: 20px; color: white; padding-right: 5px;">List Clothes</a>
-    </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  </nav>
+        <span
+          style="
+            font-size: 24px;
+            font-weight: bold;
+            padding: 0 20px;
+            margin-left: 225px;
+          "
+          >𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span
+        >
+        <div style="display: flex; align-items: center">
+          <a
+            href="./employee-homepage.html"
+            class="underline-on-hover"
+            style="font-size: 18px; color: white; padding-right: 20px"
+            >Approve Clothes</a
+          >
+          <a
+            href="./list-clothes.html"
+            class="underline-on-hover"
+            style="font-size: 20px; color: white; padding-right: 5px"
+            >List Clothes</a
+          >
+        </div>
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+      </nav>
 
-  <h1>Edit Clothes</h1>
-
-  <!-- List of clothing items to edit -->
-<div class="clothing-item">
-    <h2>Item Name</h2>
-    <p>Item Description</p>
-    <img src="item-image.jpg" alt="Item Image">
-    <form>
-      <!-- Form fields for editing item -->
-      <label for="item-name">Name:</label>
-      <input type="text" id="item-name" name="item-name" value="Item Name">
-  
-      <label for="item-description">Description:</label>
-      <textarea id="item-description" name="item-description">Item Description</textarea>
-  
-      <label for="item-image">Image:</label>
-      <input type="file" id="item-image" name="item-image">
-  
-      <label for="item-price">Price:</label>
-      <input type="text" id="item-price" name="item-price" value="$10.00">
-  
-      <a href="./edit-clothes.html" class="edit-item-button">Edit Item</a>
-    </form>
-  </div>
-  
-
-    <div class="clothing-item">
-      <!-- Repeat for other clothing items -->
-    </div>
-
-  </div>
-
-  <script src="./resources/scripts/edit-clothes.js"></script>
-</body>
+      <div class="container">
+        <div id="clothing-container"></div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="./resources/scripts/edit-clothes.js"></script>
+    </body>
+  </body>
 </html>
