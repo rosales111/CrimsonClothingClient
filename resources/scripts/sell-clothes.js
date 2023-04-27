@@ -1,3 +1,4 @@
+const user = JSON.parse(sessionStorage.getItem("user"));
 function submitClothing() {
   const name = document.getElementById("name").value;
   const size = document.getElementById("size").value;
@@ -19,6 +20,7 @@ function handlePost(clothing) {
     name: clothing.name,
     size: clothing.size,
     imageURL: clothing.imageURL,
+    userID: user.id,
   };
 
   fetch(clothingUrl, {

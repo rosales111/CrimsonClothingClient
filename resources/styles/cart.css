@@ -108,3 +108,24 @@ button[type="submit"]:hover {
   padding: 20px;
   height: 60px;
 }
+
+img{
+  height: 200px;
+  width:auto;
+}
+
+.remove-btn{
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+p{
+  text-align: right;
+}
