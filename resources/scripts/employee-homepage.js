@@ -10,16 +10,14 @@ $(document).ready(function () {
   fetchClothingData();
 });
 
+function approve(clothing) {}
+
 async function fetchEmailByID(id) {
   const userUrl = `https://localhost:7026/api/Users/${id}`;
 
-  try {
-    const response = await fetch(userUrl);
-    const user = await response.json();
-    return user.email;
-  } catch (error) {
-    console.error("Error fetching email by ID:", error);
-  }
+  return fetch(userUrl)
+    .then((response) => response.json())
+    .then((user) => user.email);
 }
 
 function fetchClothingData() {
