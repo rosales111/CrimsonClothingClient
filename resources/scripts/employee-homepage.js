@@ -10,14 +10,16 @@ $(document).ready(function () {
   fetchClothingData();
 });
 
-function approve(clothing) {}
-
-function fetchEmailByID(id) {
+async function fetchEmailByID(id) {
   const userUrl = `https://localhost:7026/api/Users/${id}`;
 
-  return fetch(userUrl)
-    .then((response) => response.json())
-    .then((user) => user.email);
+  try {
+    const response = await fetch(userUrl);
+    const user = await response.json();
+    return user.email;
+  } catch (error) {
+    console.error("Error fetching email by ID:", error);
+  }
 }
 
 function fetchClothingData() {
@@ -61,7 +63,7 @@ function displayClothingItems(clothingItems) {
       p.textContent = item.type;
 
       const p2 = document.createElement("p");
-      p2.textContent = fetchEmailByID(item.userId);
+      p2.textContent = fetchEmailByID(`${item.userId}`);
 
       const button = document.createElement("button");
       button.className = "add-to-cart-btn";
