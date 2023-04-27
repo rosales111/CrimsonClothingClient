@@ -2,7 +2,8 @@
 nav {
   background-color: red;
   padding: 10px;
-  margin-bottom: 270px;
+  margin-bottom:145px;
+  
 }
 
 /* style the links in the navbar */
@@ -14,8 +15,7 @@ nav a {
 }
 
 .card-container {
-display: flex;
-  flex-wrap: wrap;
+  display: inline-block;
   justify-content: space-between;
   margin: 30px;
 }
@@ -85,7 +85,7 @@ nav button:focus {
   outline: none;
 }
 
-.img-container {
+.clth-img {
   width: 150px;
   height: 150px;
   display: flex;

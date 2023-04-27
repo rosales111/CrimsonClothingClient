@@ -1,98 +1,117 @@
-body {
-    background-color: #222;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-  	padding: 0;
-  }
-  
-  nav {
-    background-color: red;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    margin-right: 20px;
-  }
-  
-  .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .card {
-    width: 300px;
-    height: 200px;
-    background-color: #b4b1b1;
-    box-shadow: 0 0 5px rgba(0,0,0,.3);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    color: #000;
-  }
-  
-  #cart-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .red-navbar {
-    background-color: #850202;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    color: #fff;
-  }
-  
-  .card-container {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .red-navbar a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 20px;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #cart-btn {
-    margin-left: auto;
-  }
-  
-  nav button {
-    background-color: transparent;
-    border: none;
-    color: blue;
-    cursor: pointer;
-    text-decoration: underline;
-    font-size: inherit;
-    font-family: inherit;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav button:focus {
-    outline: none;
-  }
-  
+/* add red background color to the navbar */
+nav {
+  background-color: red;
+  padding: 10px;
+  margin-bottom: 145px;
+
+}
+
+/* style the links in the navbar */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.card-container {
+  display: inline-block;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  width: 270px;
+  background-color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+.add-to-cart-btn {
+  background-color: #4CAF50;
+
+}
+
+.red-navbar {
+  background-color: red;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.red-navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cart-btn {
+  margin-left: auto;
+}
+
+nav button {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+nav button:focus {
+  outline: none;
+}
+
+.clth-img {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  min-height: 150px;
+
+}
+
+.info-container {
+  height: 100%;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.card {
+  height: 270px;
+  width: 300px;
+}
+
+
+
+p {
+  text-align: right;
+}

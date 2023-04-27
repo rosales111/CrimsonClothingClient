@@ -110,8 +110,6 @@ function handleCheckOut() {
     userID: user.id,
   };
 
-
-
   fetch(transactionUrl, {
     method: "POST",
     body: JSON.stringify(transaction),
@@ -134,7 +132,7 @@ function handleCheckOut() {
     });
 
   updateClothing(clothingItems);
-  localStorage.removeItem("cart");
+  window.location.reload();
 }
 
 function updateClothing(clothingItems) {

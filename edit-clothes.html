@@ -4,6 +4,7 @@
     <title>Employee Homepage</title>
     <link rel="stylesheet" href="./resources/styles/home-page.css" />
     <link rel="stylesheet" href="./resources/styles/login.css" />
+    <link rel="stylesheet" href="./resources/styles/edit-clothes.css" />
     <style>
       .container {
         display: flex;
@@ -17,60 +18,36 @@
     </style>
   </head>
   <body>
-    <head>
-      <title>Employee Homepage</title>
-      <link rel="stylesheet" href="./resources/styles/home-page.css" />
-      <link rel="stylesheet" href="./resources/styles/login.css" />
-      <style>
-        .container {
-          display: flex;
-          justify-content: center;
-          margin-top: 50px;
-        }
+    <nav style="display: flex; align-items: center">
+      <a href="./employee-homepage.html">𝓒𝓒</a>
 
-        .underline-on-hover:hover {
-          text-decoration: underline;
-        }
-      </style>
-    </head>
-    <body>
-      <nav style="display: flex; align-items: center">
-        <a href="./employee-homepage.html">𝓒𝓒</a>
-
-        <span
-          style="
-            font-size: 24px;
-            font-weight: bold;
-            padding: 0 20px;
-            margin-left: 225px;
-          "
-          >𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span
+      <span
+        style="
+          font-size: 24px;
+          font-weight: bold;
+          padding: 0 20px;
+          margin-left: 225px;
+        "
+        >𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span
+      >
+      <div style="display: flex; align-items: center">
+        <a
+          href="./employee-homepage.html"
+          class="underline-on-hover"
+          style="font-size: 18px; color: white; padding-right: 20px"
+          >Approve Clothes</a
         >
-        <div style="display: flex; align-items: center">
-          <a
-            href="./employee-homepage.html"
-            class="underline-on-hover"
-            style="font-size: 18px; color: white; padding-right: 20px"
-            >Approve Clothes</a
-          >
-          <a
-            href="./list-clothes.html"
-            class="underline-on-hover"
-            style="font-size: 20px; color: white; padding-right: 5px"
-            >List Clothes</a
-          >
-        </div>
-        <script
-          type="module"
-          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-        ></script>
-      </nav>
-
-      <div class="container">
-        <div id="clothing-container"></div>
       </div>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="./resources/scripts/edit-clothes.js"></script>
-    </body>
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></script>
+    </nav>
+
+    <div class="container">
+      <div id="clothing-container"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./resources/scripts/edit-clothes.js"></script>
   </body>
 </html>

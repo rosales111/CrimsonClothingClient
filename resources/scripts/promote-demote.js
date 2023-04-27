@@ -95,13 +95,20 @@ async function promoteUser(promoteeId) {
 }
 
 async function demoteUser(userId) {
+  console.log(promoteeId);
   const data = await fetchUserData();
-  const user = data.find((u) => u.id === userId);
+  const user = data.find((u) => u.id === promoteeId);
   if (user.role == 1) {
-    alert("User is already the lowest role");
+    alert("User is already at the lowest level");
     return;
   }
   user.role = user.role - 1;
+  const report = {
+    promoterID: promoter.id,
+    promoteeID: promoteeId,
+    newRole: user.role,
+  };
+  await handlePost(report);
   await handlePut(user);
   const table = createUserTable(data);
   document.body.replaceChild(table, document.querySelector("table"));

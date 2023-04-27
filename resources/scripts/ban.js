@@ -6,7 +6,8 @@ function handleBanClick() {
   fetch(userUrl)
     .then((response) => response.json())
     .then((user) => {
-      user.isbanned = !user.isbanned;
+      user.isbanned = true;
+
       handlePut(user);
       emailInput.value = "";
       alert(`User ${user.email} has been banned`);
@@ -23,7 +24,7 @@ async function handlePut(user) {
     email: user.email,
     password: user.password,
     role: user.role,
-    isBanned: user.isBanned,
+    isBanned: user.isbanned,
   };
 
   await fetch(userUrl, {

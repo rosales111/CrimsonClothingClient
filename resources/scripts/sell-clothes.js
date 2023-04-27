@@ -30,4 +30,26 @@ function handlePost(clothing) {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
+
+  const Offer = {
+    clothingid: newClothing.id,
+    userID: user.id,
+  };
+  postOffer(Offer);
+}
+
+function postOffer(offer) {
+  const offerUrl = "https://localhost:7026/api/offers";
+  const newOffer = {
+    clothingid: offer.clothingid,
+    userID: offer.userID,
+  };
+
+  fetch(offerUrl, {
+    method: "POST",
+    body: JSON.stringify(newOffer),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
 }
