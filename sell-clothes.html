@@ -1,79 +1,102 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Sell Clothes</title>
-	<style>
-		form {
-			max-width: 500px;
-			margin: auto;
-		}
-		input[type=text], input[type=number], select, textarea {
-			width: 100%;
-			padding: 12px;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			box-sizing: border-box;
-			margin-bottom: 12px;
-		}
-		input[type=submit] {
-			background-color: #4CAF50;
-			color: white;
-			padding: 12px 20px;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-		input[type=submit]:hover {
-			background-color: #45a049;
-		}
+  <head>
+    <title>Sell Clothes</title>
+    <link rel="stylesheet" href="./resources/styles/sell-clothes.css" />
+    <style>
+      form {
+        max-width: 500px;
+        margin: auto;
+      }
+      input[type="text"],
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 12px;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
 
+      .underline-on-hover:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav style="display: flex; align-items: center">
+      <a href="./home-page.html">𝓒𝓒</a>
 
-		.underline-on-hover:hover {
-      		text-decoration: underline;
-    	}
-	</style>
-</head>
-<body>
-    <nav style="display: flex; align-items: center;">
-		<a href="./home-page.html">𝓒𝓒</a>
-		
-		<span style="font-size: 24px; font-weight: bold; padding: 0 20px; margin-left: 425px;">𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span>
-		<a href="/shop"></a>
-		<a href="/about"></a>
-		<div style="display: flex; align-items: center;">
-		  <a href="./sell-clothes.html" class="underline-on-hover" style="font-size: 18px; color: white; padding-right: 20px;">Sell Clothes</a>
-		  <a href="./cart.html" class="underline-on-hover" style="font-size: 20px;">
-			<ion-icon name="cart-outline"></ion-icon>
-		  </a>
-		</div>
-		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-	  </nav>
-    <link rel="stylesheet" href="./resources/styles/sell-clothes.css">
-	<h1>Sell Clothes</h1>
-	<form action="/submit-clothes" method="post">
-		<label for="name">Name:</label>
-		<input type="text" id="name" name="name" placeholder="Enter item name..." required>
-		
-		<!-- <label for="price">Price:</label>
-		<input type="number" id="price" name="price" placeholder="Enter item price..." required> -->
-		
-		<label for="size">Size:</label>
-		<select id="size" name="size" required>
-			<option value="">Select size...</option>
-			<option value="XS">Extra Small</option>
-			<option value="S">Small</option>
-			<option value="M">Medium</option>
-			<option value="L">Large</option>
-			<option value="XL">Extra Large</option>
-		</select>
-		
-		<!-- <label for="description">Description:</label>
-		<textarea id="description" name="description" placeholder="Enter item description..." required></textarea> -->
-		
-		<label for="image">Image:</label>
-		<input type="file" id="image" name="image" accept="image/*" required>
-		
-		<input type="submit" value="Submit">
-	</form>
-</body>
+      <span
+        style="
+          font-size: 24px;
+          font-weight: bold;
+          padding: 0 20px;
+          margin-left: 425px;
+        "
+        >𝘾𝙧𝙞𝙢𝙨𝙤𝙣 𝘾𝙡𝙤𝙩𝙝𝙞𝙣𝙜</span
+      >
+      <a href="/shop"></a>
+      <a href="/about"></a>
+      <div style="display: flex; align-items: center">
+        <a
+          href="./sell-clothes.html"
+          class="underline-on-hover"
+          style="font-size: 18px; color: white; padding-right: 20px"
+          >Sell Clothes</a
+        >
+        <a
+          href="./cart.html"
+          class="underline-on-hover"
+          style="font-size: 20px"
+        >
+          <ion-icon name="cart-outline"></ion-icon>
+        </a>
+      </div>
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></script>
+    </nav>
+    <h1>Sell Clothes</h1>
+    <form method="post" onsubmit="submitClothing(); return false;">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter item name..."
+        required
+      />
+
+      <label for="size">Size:</label>
+      <select id="size" name="size" required>
+        <option value="">Select size...</option>
+        <option value="XS">Extra Small</option>
+        <option value="S">Small</option>
+        <option value="M">Medium</option>
+        <option value="L">Large</option>
+        <option value="XL">Extra Large</option>
+      </select>
+
+      <label for="image">Image URL:</label>
+      <input type="url" id="imageURL" name="imageURL" required />
+
+      <input type="submit" value="Submit" />
+    </form>
+    <script src="./resources/scripts/sell-clothes.js"></script>
+  </body>
 </html>

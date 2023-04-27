@@ -3,7 +3,10 @@ body {
     margin: 0;
     padding: 0;
   }
-  
+    input[type = "url"]{
+      margin-right: 50px;
+      padding-right: 100px;
+    }
   nav {
     background-color: red;
     display: flex;
@@ -29,6 +32,11 @@ body {
     font-family: inherit;
     padding: 0;
     margin: 0;
+  }
+
+  h1{
+    text-align: center;
+    margin-top: 50px;
   }
   
   nav button:focus {

@@ -1,5 +1,5 @@
 function handleBanClick() {
-  const emailInput = document.querySelector('input[type="email"]');
+  const emailInput = document.getElementById("email");
   const email = emailInput.value;
   console.log(email);
   const userUrl = `https://localhost:7026/api/Users/byemail/${email}`;
