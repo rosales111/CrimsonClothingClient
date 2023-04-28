@@ -41,12 +41,9 @@ form.addEventListener("submit", async (event) => {
   });
 
   if (response.ok) {
-    // Save user information or token in local storage or session storage
     sessionStorage.setItem("user", JSON.stringify(newUser));
 
-    // Redirect to the main page
-    //window.location.href = "./home-page.html"; // Change "/main" to your main page path
-    form.reset();
+    window.location.href = "./home-page.html"; // Change "/main" to your main page path
   } else {
     console.log("Error: " + response.statusText);
   }
