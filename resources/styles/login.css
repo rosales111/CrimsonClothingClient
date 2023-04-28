@@ -6,6 +6,7 @@ body {
   padding: 0;
 }
 
+
 .container {
   display: flex;
   justify-content: center;
@@ -73,6 +74,21 @@ button[type="submit"] {
   color: #222;
   padding: 10px;
   border: none;
+  
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+}
+
+button[type="create"] {
+  background-color: #eee;
+  color: #222;
+  padding: 10px;
+  border: none;
+  margin-top: 30px;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -82,6 +98,18 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
+  background-color: #ccc;
+  transform: scale(1.1);
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  color: #eee;
+  background-color: #444;
+}
+
+button[type="create"]:hover {
   background-color: #ccc;
   transform: scale(1.1);
 }
@@ -110,4 +138,8 @@ button[type="submit"]:hover {
 .add-to-cart-btn:hover {
   background-color: #666;
   transform: scale(1.1);
+}
+
+#icon{
+  background-color: crimson !important;
 }

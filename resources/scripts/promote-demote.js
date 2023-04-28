@@ -64,12 +64,8 @@ function createUserTable(users) {
       <td>${user.email}</td>
       <td>${role}</td>
       <td>
-        <button class="btn btn-primary btn-sm me-2" onclick="promoteUser(${
-          user.id
-        })">Promote</button>
-        <button class="btn btn-warning btn-sm" onclick="demoteUser(${
-          (user.id, promoter.id)
-        })">Demote</button>
+        <button class="btn btn-primary btn-sm me-2" onclick="promoteUser(${user.id})">Promote</button>
+        <button class="btn btn-warning btn-sm" onclick="demoteUser(${user.id})">Demote</button>
       </td>
     `;
       tbody.appendChild(tr);
