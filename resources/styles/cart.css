@@ -4,7 +4,8 @@ body {
   color: #eee;
   padding-bottom: 175px;
   padding: 0px;
-  margin: 0px;
+  margin-bottom: 200px;
+  margin-top: 0px;
 }
 .card {
   background-color: #333;

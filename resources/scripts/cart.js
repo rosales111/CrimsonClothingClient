@@ -125,18 +125,17 @@ function handleCheckOut() {
       }
       updateClothing(clothingItems);
       localStorage.removeItem("cart");
+      window.location.reload();
+
       return response.json();
     })
     .catch((error) => {
       console.error("There was an error:", error);
     });
-
-  updateClothing(clothingItems);
-  window.location.reload();
 }
 
-function updateClothing(clothingItems) {
-  const transactions = FetchTransactions();
+async function updateClothing(clothingItems) {
+  const transactions = await FetchTransactions();
   const lastTransaction = transactions[transactions.length - 1];
   clothingItems.forEach((item) => {
     const clothingUrl = `https://localhost:7026/api/Clothing/${item.id}`;
@@ -159,13 +158,12 @@ function updateClothing(clothingItems) {
   });
 }
 
-function FetchTransactions() {
+async function FetchTransactions() {
   const transactionUrl = "https://localhost:7026/api/transactions";
   const transactionItems = [];
-  fetch(transactionUrl)
+  return fetch(transactionUrl)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       data.forEach((item) => {
         const transaction = {
           id: item.id,
@@ -175,6 +173,6 @@ function FetchTransactions() {
         };
         transactionItems.push(transaction);
       });
+      return transactionItems;
     });
-  return transactionItems;
 }

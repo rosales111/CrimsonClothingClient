@@ -5,43 +5,15 @@ body {
   	padding: 0;
 }
 
-.container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: flex-start;
+nav{
+	margin-bottom: 45px;
 }
 
-.report {
-	margin: 20px;
-	padding: 20px;
-	background-color: #fff;
-	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-	border-radius: 5px;
-	width: 400px;
+h1{
+	color: white;
+	text-align: center;
 }
 
-.report h2 {
-	font-size: 20px;
-	margin-bottom: 10px;
-}
 
-.report table {
-	width: 100%;
-	border-collapse: collapse;
-	margin-top: 10px;
-}
 
-.report table th, .report table td {
-	padding: 10px;
-	text-align: left;
-	border-bottom: 1px solid #525050;
-}
 
-.report table th {
-	background-color: #636161;
-}
-
-canvas {
-	margin-top: 10px;
-}

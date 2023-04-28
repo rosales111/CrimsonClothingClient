@@ -3,6 +3,11 @@ const promotionURL = "https://localhost:7026/api/promotion";
 const promoter = JSON.parse(sessionStorage.getItem("user"));
 console.log(promoter);
 const users = fetchUserData();
+// Fetch user data and create the table
+fetchUserData().then((users) => {
+  const table = createUserTable(users);
+  document.body.appendChild(table);
+});
 async function fetchUserData() {
   try {
     const response = await fetch(url);
@@ -43,17 +48,18 @@ function createUserTable(users) {
   // Table body
   const tbody = document.createElement("tbody");
   users.forEach((user) => {
-    const tr = document.createElement("tr");
+    if (user.isBanned == false) {
+      const tr = document.createElement("tr");
 
-    let role = "";
-    if (user.role == "1") {
-      role = "User";
-    } else if (user.role == "2") {
-      role = "Employee";
-    } else if (user.role == "3") {
-      role = "Admin";
-    }
-    tr.innerHTML = `
+      let role = "";
+      if (user.role == "1") {
+        role = "User";
+      } else if (user.role == "2") {
+        role = "Employee";
+      } else if (user.role == "3") {
+        role = "Admin";
+      }
+      tr.innerHTML = `
       <td>${user.fullName}</td>
       <td>${user.email}</td>
       <td>${role}</td>
@@ -66,7 +72,8 @@ function createUserTable(users) {
         })">Demote</button>
       </td>
     `;
-    tbody.appendChild(tr);
+      tbody.appendChild(tr);
+    }
   });
   table.appendChild(tbody);
 
@@ -94,7 +101,7 @@ async function promoteUser(promoteeId) {
   document.body.replaceChild(table, document.querySelector("table"));
 }
 
-async function demoteUser(userId) {
+async function demoteUser(promoteeId) {
   console.log(promoteeId);
   const data = await fetchUserData();
   const user = data.find((u) => u.id === promoteeId);
@@ -113,12 +120,6 @@ async function demoteUser(userId) {
   const table = createUserTable(data);
   document.body.replaceChild(table, document.querySelector("table"));
 }
-
-// Fetch user data and create the table
-fetchUserData().then((users) => {
-  const table = createUserTable(users);
-  document.body.appendChild(table);
-});
 
 async function handlePut(user) {
   console.log("handlePut called");
