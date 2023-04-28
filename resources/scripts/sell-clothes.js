@@ -13,7 +13,7 @@ function submitClothing() {
 }
 
 function handlePost(clothing) {
-  const clothingUrl = "https://localhost:7026/api/Clothing";
+  const clothingUrl = "https://testtest-benjaminf.pitunnel.com/api/Clothing";
 
   const newClothing = {
     id: clothing.id,
@@ -39,7 +39,7 @@ function handlePost(clothing) {
 }
 
 function postOffer(offer) {
-  const offerUrl = "https://localhost:7026/api/offers";
+  const offerUrl = "https://testtest-benjaminf.pitunnel.com/api/offers";
   const newOffer = {
     clothingid: offer.clothingid,
     userID: offer.userID,

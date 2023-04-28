@@ -1,6 +1,6 @@
 // create-account.js
 
-const url = "https://localhost:7026/api/Users";
+const url = "https://testtest-benjaminf.pitunnel.com/api/Users";
 const form = document.querySelector("#register-form");
 
 form.addEventListener("submit", async (event) => {

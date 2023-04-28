@@ -2,7 +2,7 @@ function handleBanClick() {
   const emailInput = document.getElementById("email");
   const email = emailInput.value;
   console.log(email);
-  const userUrl = `https://localhost:7026/api/Users/byemail/${email}`;
+  const userUrl = `https://testtest-benjaminf.pitunnel.com/api/Users/byemail/${email}`;
   fetch(userUrl)
     .then((response) => response.json())
     .then((user) => {
@@ -17,7 +17,7 @@ function handleBanClick() {
 
 async function handlePut(user) {
   console.log("handlePut called");
-  const userUrl = `https://localhost:7026/api/Users/${user.id}`;
+  const userUrl = `https://testtest-benjaminf.pitunnel.com/api/Users/${user.id}`;
   const newUser = {
     id: user.id,
     fullName: user.fullName,

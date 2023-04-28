@@ -1,5 +1,5 @@
-const url = "https://localhost:7026/api/Users";
-const promotionURL = "https://localhost:7026/api/promotion";
+const url = "https://testtest-benjaminf.pitunnel.com/api/Users";
+const promotionURL = "https://testtest-benjaminf.pitunnel.com/api/promotion";
 const promoter = JSON.parse(sessionStorage.getItem("user"));
 console.log(promoter);
 const users = fetchUserData();
@@ -119,7 +119,7 @@ async function demoteUser(promoteeId) {
 
 async function handlePut(user) {
   console.log("handlePut called");
-  const userUrl = "https://localhost:7026/api/Users" + "/" + user.ID;
+  const userUrl = "https://testtest-benjaminf.pitunnel.com/api/Users" + "/" + user.ID;
 
   const newUser = {
     id: user.id,

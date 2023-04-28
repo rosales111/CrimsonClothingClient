@@ -24,7 +24,7 @@ function addToCart(clothing) {
 
 function fetchClothingData() {
   // Replace with your actual API URL
-  const apiUrl = "https://localhost:7026/api/Clothing";
+  const apiUrl = "https://testtest-benjaminf.pitunnel.com/api/Clothing";
 
   fetch(apiUrl)
     .then((response) => response.json())

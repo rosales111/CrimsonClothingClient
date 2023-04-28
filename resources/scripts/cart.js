@@ -96,7 +96,7 @@ $(document).ready(function () {
 });
 
 function handleCheckOut() {
-  const transactionUrl = "https://localhost:7026/api/Transactions";
+  const transactionUrl = "https://testtest-benjaminf.pitunnel.com/api/Transactions";
   const clothingItems = JSON.parse(localStorage.getItem("cart"));
   console.log(user.id);
   const totalPrice = $(".total-price h2").text();
@@ -138,7 +138,7 @@ async function updateClothing(clothingItems) {
   const transactions = await FetchTransactions();
   const lastTransaction = transactions[transactions.length - 1];
   clothingItems.forEach((item) => {
-    const clothingUrl = `https://localhost:7026/api/Clothing/${item.id}`;
+    const clothingUrl = `https://testtest-benjaminf.pitunnel.com/api/Clothing/${item.id}`;
     const clothing = {
       id: item.id,
       name: item.title,
@@ -159,7 +159,7 @@ async function updateClothing(clothingItems) {
 }
 
 async function FetchTransactions() {
-  const transactionUrl = "https://localhost:7026/api/transactions";
+  const transactionUrl = "https://testtest-benjaminf.pitunnel.com/api/transactions";
   const transactionItems = [];
   return fetch(transactionUrl)
     .then((response) => response.json())
