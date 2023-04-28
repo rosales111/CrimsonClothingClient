@@ -2,43 +2,62 @@ const url = "https://localhost:7026/api/transactions";
 const userUrl = "https://localhost:7026/api/Users";
 
 function showTransactions() {
-  const tableContainer = document.getElementById("table-container");
-  if (tableContainer) {
-    tableContainer.remove();
-  }
+  const transactions = document.getElementById(`transactions`);
+  transactions.innerHTML = "";
   fetchTransactionData().then((transactions) => {
     const dropdown = createDropdown();
-    document.body.appendChild(dropdown);
-    const table = createTransactionTable(transactions);
-    document.body.appendChild(table);
+    createTransactionTable(transactions);
     dropdown.addEventListener("change", (event) => {
-      filterTransactions(event.target.value, transactions, table);
+      ClearScreen();
+      createDropdown();
+      filterTransactions(event.target.value, transactions);
     });
   });
 }
 
+function TopSellingCustomers() {
+  const transactions = document.getElementById(`transactions`);
+  transactions.innerHTML = "";
+  fetchTransactionData().then((transactions) => {
+    let index = 0;
+    let max = 0;
+    transactions.forEach((transaction) => {
+      if (transaction.userID === index) {
+        sum += transaction.price;
+      } else {
+        index++;
+        sum = transaction.price;
+      }
+      if (sum > max) {
+        max = sum;
+        maxIndex = index;
+      }
+    });
+    const maxTransactions = transactions.filter(
+      (transaction) => transaction.userID === maxIndex
+    );
+    singleMax = maxTransactions[0];
+    singleMax.price = max;
+    createSingleTransactionTable(singleMax);
+  });
+}
+
 async function transactionsByID(ID) {
-  const tableContainer = document.getElementById("table-container");
-  if (tableContainer) {
-    tableContainer.remove();
-  }
+  const transactions = document.getElementById(`transactions`);
+  transactions.innerHTML = "";
   fetchTransactionData().then((transactions) => {
     let filteredTransactions = transactions.filter(
       (transaction) => transaction.userID === ID
     );
     const input = createInput();
-    document.body.appendChild(input);
-    const table = createTransactionTable(filteredTransactions);
-    document.body.appendChild(table);
     input.addEventListener("change", (event) => {
       const newID = parseInt(event.target.value);
       const newFilteredTransactions = transactions.filter(
         (transaction) => transaction.userID === newID
       );
-      const newTable = createTransactionTable(newFilteredTransactions);
-      table.replaceWith(newTable);
       filteredTransactions = newFilteredTransactions;
       ID = newID;
+      filterTransactions("All Time", filteredTransactions);
     });
   });
 }
@@ -47,6 +66,8 @@ function createInput() {
   const input = document.createElement("input");
   input.type = "text";
   input.placeholder = "Enter User ID";
+  document.getElementById(`transactions`).appendChild(input);
+
   return input;
 }
 
@@ -67,10 +88,11 @@ function createDropdown() {
     select.appendChild(option);
   });
 
+  document.getElementById(`transactions`).appendChild(select);
   return select;
 }
 
-function filterTransactions(range, transactions, table) {
+function filterTransactions(range, transactions) {
   const filteredTransactions = transactions.filter((transaction) => {
     const transactionDate = new Date(transaction.date);
     const currentDate = new Date();
@@ -92,8 +114,7 @@ function filterTransactions(range, transactions, table) {
     }
   });
 
-  const updatedTable = createTransactionTable(filteredTransactions);
-  table.replaceWith(updatedTable);
+  createTransactionTable(filteredTransactions);
 }
 
 async function fetchTransactionData() {
@@ -191,5 +212,44 @@ function createTransactionTable(transactions) {
   }
   table.appendChild(tbody);
 
-  return table;
+  document.getElementById(`transactions`).appendChild(table);
+}
+
+function createSingleTransactionTable(transaction) {
+  const table = document.createElement("table");
+  table.classList.add("table");
+
+  // Table header
+  const thead = document.createElement("thead");
+  thead.innerHTML = `
+    <tr>
+    <th scope="col">User</th>
+    <th scope="col">First Purchase Date</th>
+    <th scope="col">Total</th>
+
+    </tr>
+  `;
+  table.appendChild(thead);
+
+  // Table body
+  const tbody = document.createElement("tbody");
+  const tr = document.createElement("tr");
+  const dateArray = transaction.date.split("T")[0].split("-");
+  const formattedDate = dateArray[1] + "/" + dateArray[2] + "/" + dateArray[0];
+
+  tr.innerHTML = `
+      <td>${transaction.userID}</td>
+      <td>${formattedDate}</td>
+      <td>$${transaction.price}.00</td>
+      
+    `;
+  tbody.appendChild(tr);
+
+  table.appendChild(tbody);
+
+  document.getElementById(`transactions`).appendChild(table);
+}
+
+function ClearScreen() {
+  document.getElementById(`transactions`).innerHTML = "";
 }
