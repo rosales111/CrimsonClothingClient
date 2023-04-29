@@ -9,7 +9,7 @@ form.addEventListener("submit", async (event) => {
 
   // Your email and password validation code here
 
-  let userUrl = `https://localhost:7026/api/Users/byemail/${email}`;
+  let userUrl = `https://testtest-benjaminf.pitunnel.com/api/Users/byemail/${email}`;
   fetch(userUrl)
     .then((response) => response.json())
     .then((user) => {

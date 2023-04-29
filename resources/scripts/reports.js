@@ -1,5 +1,5 @@
-const url = "https://localhost:7026/api/transactions";
-const userUrl = "https://localhost:7026/api/Users";
+const url = "https://testtest-benjaminf.pitunnel.com/api/transactions";
+const userUrl = "https://testtest-benjaminf.pitunnel.com/api/Users";
 
 function showTransactions() {
   const transactions = document.getElementById(`transactions`);

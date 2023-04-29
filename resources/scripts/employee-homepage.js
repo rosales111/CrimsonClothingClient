@@ -17,7 +17,7 @@ function approve(clothing) {
 
 async function handlePut(clothing) {
   console.log("handlePut called");
-  const clothingUrl = "https://localhost:7026/api/Clothing" + "/" + clothing.ID;
+  const clothingUrl = "https://testtest-benjaminf.pitunnel.com/api/Clothing" + "/" + clothing.ID;
 
   const newClothing = {
     id: clothing.id,
@@ -43,7 +43,7 @@ async function handlePut(clothing) {
 }
 
 async function fetchEmailByID(id) {
-  const userUrl = `https://localhost:7026/api/Users/${id}`;
+  const userUrl = `https://testtest-benjaminf.pitunnel.com/api/Users/${id}`;
 
   return fetch(userUrl)
     .then((response) => response.json())
@@ -52,7 +52,7 @@ async function fetchEmailByID(id) {
 
 function fetchClothingData() {
   // Replace with your actual API URL
-  const apiUrl = "https://localhost:7026/api/Clothing";
+  const apiUrl = "https://testtest-benjaminf.pitunnel.com/api/Clothing";
 
   fetch(apiUrl)
     .then((response) => response.json())

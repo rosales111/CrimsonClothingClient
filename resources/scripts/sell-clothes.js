@@ -15,7 +15,7 @@ function submitClothing() {
 }
 
 async function handlePost(clothing) {
-  const clothingUrl = "https://localhost:7026/api/Clothing";
+  const clothingUrl = "https://testtest-benjaminf.pitunnel.com/api/Clothing";
 
   const newClothing = {
     title: "clothingtitle",
@@ -61,7 +61,8 @@ async function handlePost(clothing) {
   postOffer(Offer);
 }
 
-async function postOffer(offer) {
+function postOffer(offer) {
+  const offerUrl = "https://testtest-benjaminf.pitunnel.com/api/offers";
   const newOffer = {
     clothingID: lastClothing.id,
     customerID: user.id,
