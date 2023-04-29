@@ -98,6 +98,7 @@ function displayClothingItems(clothingItems) {
       button.addEventListener("click", () => {
         approve(item);
         window.location.reload();
+        fetchClothingData();
       });
 
       infoWrapper.appendChild(h2);

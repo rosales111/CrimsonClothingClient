@@ -98,6 +98,7 @@ $(document).ready(function () {
 function handleCheckOut() {
   const transactionUrl = "https://localhost:7026/api/Transactions";
   const clothingItems = JSON.parse(localStorage.getItem("cart"));
+  localStorage.setItem("cart", "[]");
   console.log(user.id);
   const totalPrice = $(".total-price h2").text();
   const numericPrice = parseFloat(totalPrice.replace(/[^\d.-]/g, ""));
@@ -126,7 +127,6 @@ function handleCheckOut() {
       updateClothing(clothingItems);
       localStorage.removeItem("cart");
       window.location.reload();
-
       return response.json();
     })
     .catch((error) => {

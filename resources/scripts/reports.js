@@ -56,7 +56,6 @@ async function transactionsByID(ID) {
         (transaction) => transaction.userID === newID
       );
       filteredTransactions = newFilteredTransactions;
-      ID = newID;
       filterTransactions("All Time", filteredTransactions);
     });
   });

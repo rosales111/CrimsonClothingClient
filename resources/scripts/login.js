@@ -21,9 +21,9 @@ form.addEventListener("submit", async (event) => {
         sessionStorage.setItem("user", JSON.stringify(user));
 
         // Redirect to the appropriate page based on user role
-        if (email === "manager@crimsonclothing.com" && role === 3) {
+        if (email === "manager@crimsonclothing.com") {
           window.location.href = "./manager-homepage.html";
-        } else if (email.endsWith("@crimsonclothing.com") && role === 2) {
+        } else if (email.endsWith("@crimsonclothing.com")) {
           window.location.href = "./employee-homepage.html";
         } else {
           window.location.href = "./home-page.html";

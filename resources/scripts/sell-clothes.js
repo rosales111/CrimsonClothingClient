@@ -1,27 +1,30 @@
 const user = JSON.parse(sessionStorage.getItem("user"));
+console.log(user.id);
 function submitClothing() {
-  const name = document.getElementById("name").value;
+  const title = document.getElementById("name").value;
   const size = document.getElementById("size").value;
   const imageURL = document.getElementById("imageURL").value;
 
-  const clothing = { name, size, imageURL };
+  const clothing = { title, size, imageURL };
   console.log(clothing);
 
   document.getElementById("name").value = "";
   document.getElementById("size").value = "";
   document.getElementById("imageURL").value = "";
+  handlePost(clothing);
 }
 
-function handlePost(clothing) {
+async function handlePost(clothing) {
   const clothingUrl = "https://localhost:7026/api/Clothing";
 
   const newClothing = {
-    id: clothing.id,
-    name: clothing.name,
-    size: clothing.size,
-    imageURL: clothing.imageURL,
-    userID: user.id,
+    title: "clothingtitle",
+    userID: 16,
+    size: "clothingsize",
+    imageURL: "www.clothes.com",
   };
+  console.log(newClothing);
+  console.log(clothingUrl);
 
   fetch(clothingUrl, {
     method: "POST",
@@ -29,20 +32,40 @@ function handlePost(clothing) {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  });
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log("Transaction created");
+      } else if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      updateClothing(clothingItems);
+      localStorage.removeItem("cart");
+
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("There was an error:", error);
+    });
+
+  const myClothing = await fetchClothingData();
+  console.log(myClothing);
+  const lastClothing = myClothing[myClothing.length - 1];
+  console.log(lastClothing.id);
 
   const Offer = {
-    clothingid: newClothing.id,
-    userID: user.id,
+    ClothingID: lastClothing.id,
+    CustomerID: user.id,
+    ImageURL: newClothing.imageURL,
   };
   postOffer(Offer);
 }
 
-function postOffer(offer) {
-  const offerUrl = "https://localhost:7026/api/offers";
+async function postOffer(offer) {
   const newOffer = {
-    clothingid: offer.clothingid,
-    userID: offer.userID,
+    clothingID: lastClothing.id,
+    customerID: user.id,
+    imageURL: offer.imageURL,
   };
 
   fetch(offerUrl, {
@@ -51,5 +74,37 @@ function postOffer(offer) {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  });
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log("Transaction created");
+      } else if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      updateClothing(clothingItems);
+      localStorage.removeItem("cart");
+      window.location.reload();
+
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("There was an error:", error);
+    });
+}
+
+async function fetchClothingData() {
+  const clothingUrl = "https://localhost:7026/api/Clothing";
+  const clothingItems = [];
+  return fetch(clothingUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((item) => {
+        const clothing = {
+          id: item.id,
+        };
+        clothingItems.push(clothing);
+      });
+      console.log(clothingItems);
+      return clothingItems;
+    });
 }
